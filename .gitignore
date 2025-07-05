@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+lipnet_env/
+
+# Data files
+data/test_videos/*.mp4
+data/test_videos/*.mpg
+data/test_videos/*.avi
+
+# Model weights
+models/pretrained/*.pt
+models/fine_tuned/*.pt
+models/checkpoints/
+
+# Debug files
+debug_*.jpg
+*.dat
