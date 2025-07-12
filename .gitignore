@@ -5,11 +5,15 @@
 models/pretrained/
 models/shape_predictor_*
 
-# Data directories
-data/GRID/processed_*/
+# Data directories (IMPORTANT!)
 data/GRID/video/
+data/GRID/align/
+data/GRID/processed_*/
 debug_mediapipe/
 
 # Python
 __pycache__/
 *.pyc
+
+# Training logs
+logs/
