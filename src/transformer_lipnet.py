@@ -171,22 +171,9 @@ class AdvancedDataset(Dataset):
             self.sample_files = []
             return
         
-        all_files = sorted([f for f in os.listdir(data_path) if f.endswith('.pkl')])
-        
-        # Prioritize safe samples, then enhanced, then others
-        safe_files = [f for f in all_files if f.startswith('safe_sample_')]
-        enhanced_files = [f for f in all_files if f.startswith('enhanced_sample_')]
-        other_files = [f for f in all_files if not (f.startswith('safe_') or f.startswith('enhanced_'))]
-        
-        if safe_files:
-            self.sample_files = safe_files[:max_samples]
-            print(f"Using {len(self.sample_files)} SAFE samples")
-        elif enhanced_files:
-            self.sample_files = enhanced_files[:max_samples]
-            print(f"Using {len(self.sample_files)} ENHANCED samples")
-        else:
-            self.sample_files = other_files[:max_samples]
-            print(f"Using {len(self.sample_files)} OTHER samples")
+        all_files = sorted([f for f in os.listdir(data_path) if f.endswith('.pkl')])        
+        self.sample_files = all_files[:max_samples]
+        print(f"Loading {len(self.sample_files)} samples from multi-dataset")
     
     def __len__(self):
         return len(self.sample_files)
