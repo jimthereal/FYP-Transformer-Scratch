@@ -1,19 +1,49 @@
-﻿# Large model files
+﻿# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+lipnet/
+
+# IDEs
+.vscode/
+.idea/
+
+# Large model files
 *.pth
 *.pt
 *.dat
 models/pretrained/
 models/shape_predictor_*
+best_transformer_model.pth
+training_history_enhanced.pkl
 
-# Data directories  
-data/GRID/video/
-data/GRID/align/
-data/GRID/processed_*/
+# Data directories (keep structure, ignore large files)
+data/
 
 # Training artifacts
 logs/
 debug_mediapipe/
+training_history*.pkl
 
-# Python
-__pycache__/
-*.pyc
+# Documentation
+docs/
+Investigation_Report.docx
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large media files
+*.mpg
+*.mp4
+*.avi
+*.jpg
+*.png
+
+# Database files
+*.db
+*.sqlite
