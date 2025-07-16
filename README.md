@@ -1,104 +1,84 @@
 ﻿# Deep Learning-Based Lip-Reading System
 
 **Final Year Project - Bachelor of Computer Science (AI)**  
-**Student**: Jimmy Yeow Kai Jim (TP068422) | **University**: Asia Pacific University
 
-## **Project Status: PRODUCTION-READY BREAKTHROUGH**
+## **Project Status: MILESTONE ACHIEVED - Stable Transformer Model**
 
-**Multi-Dataset System**: 3500 diverse samples (GRID + MIRACL-VC1)  
-**Architecture**: Production Transformer with robust generalization  
-**Hardware**: Optimized for RTX 3060 with Windows-safe processing  
+**Current Model**: Stable Transformer trained on GRID Corpus  
+**Performance**: 17.42% WER on test set (600 samples)  
+**Architecture**: 4-layer transformer with 3D CNN backbone  
+**Status**: Completed as investigation milestone  
 
 ---
 
 ## **Major Achievements**
 
-### **Dataset Evolution**
+### **Model Development Timeline**
 | Phase | Dataset | Samples | WER | Status |
 |-------|---------|---------|-----|--------|
-| Initial | GRID-only | 20 | 50.8% | Severe overfitting |
-| Problem | GRID-only | 100 | 71.4% | Model memorizing patterns |
-| **Solution** | **Multi-Dataset** | **3500** | **Training in progress** | **Production-ready** |
+| Initial | GRID-only | 20 | 50.8% | Overfitting issues |
+| Scaled | GRID-only | 100 | 71.4% | Pattern memorization |
+| **Stable** | **GRID (3 speakers)** | **3000** | **17.42%** | **Milestone achieved** |
 
-### **Technical Breakthroughs**
-- **Multi-Dataset Processing**: GRID (1500) + MIRACL-VC1 (2000) = 3500 samples
-- **Transformer Architecture**: 6-layer encoder with 8 attention heads
-- **Windows-Safe Pipeline**: Robust processing with 0% failure rate
-- **Speaker Diversity**: 15+ speakers from different backgrounds
+### **Technical Accomplishments**
+- **Stable Architecture**: 4-layer transformer with consistent performance
+- **Successful Training**: 17.42% WER demonstrates effective learning
+- **Complete Pipeline**: End-to-end system from video to text
+- **Web Deployment**: Functional Flask backend with UI
 
 ---
 
 ## **System Architecture**
 
-### **Production Data Pipeline**
+### **Data Processing Pipeline**
 ```
-Raw Videos (GRID .mpg + MIRACL .jpg sequences) →
-MediaPipe Face Detection + Lip Extraction →
-Quality Filtering + Normalization →
-[1, 75, 128, 64] Tensor Format →
-3500 Diverse Training Samples
-```
-
-### **Transformer Model Architecture**
-```
-3D CNN Backbone (64→128→256 channels) →
-Adaptive Pooling + Feature Projection (512D) →
-Positional Encoding + 6-Layer Transformer →
-Multi-Head Attention (8 heads) + Layer Normalization →
-CTC Loss + Character-Level Decoding
+GRID Corpus Videos (.mpg) →
+Frame Extraction (75 frames) →
+MediaPipe Lip Detection →
+Normalization (64x128) →
+[1, 75, 128, 64] Tensors →
+Train: 2400 / Test: 600
 ```
 
-### **Training Infrastructure**
-- **Hardware**: MSI GF65 Thin (RTX 3060, 16GB RAM)
-- **Framework**: PyTorch + Mixed Precision (AMP)
-- **Optimization**: AdamW with cosine annealing
-- **Expected Performance**: 15-30% WER (realistic for diverse data)
+### **Stable Transformer Architecture**
+```
+3D CNN Backbone (32→64→128 channels) →
+Adaptive Pooling (75, 4, 2) →
+Feature Projection (256D) →
+Positional Encoding →
+4-Layer Transformer (8 heads) →
+CTC Output (28 classes)
+```
+
+### **Model Specifications**
+- **Parameters**: 4,897,564 (4.9M)
+- **Architecture**: Stable Transformer
+- **d_model**: 256
+- **Layers**: 4 transformer encoder layers
+- **Attention Heads**: 8
+- **Training Time**: ~2 hours (50 epochs)
 
 ---
 
-## **Dataset Details**
+## **Performance Results**
 
-### **Multi-Dataset Composition**
-- **GRID Corpus**: 1500 samples (controlled conditions, 3 speakers)
-- **MIRACL-VC1**: 2000 samples (diverse speakers, real-world variation)
-- **Total Speakers**: 15+ individuals from different backgrounds
-- **Processing Success**: 100% (3500/3500 samples processed successfully)
+### **Test Set Evaluation (600 samples)**
+| Metric | Value | Description |
+|--------|-------|-------------|
+| Overall WER | 17.42% | Word Error Rate |
+| Character Error Rate | 17.42% | Character-level errors |
+| Word Accuracy | 79.84% | Correctly predicted words |
+| Sentence Accuracy | 31.33% | Perfect predictions (188/600) |
+| Mean Confidence | 97.36% | Model confidence score |
 
-### **Data Diversity Benefits**
-- **Speaker Variation**: Male/female, different ages
-- **Lighting Conditions**: Controlled + natural lighting
-- **Speech Patterns**: Words + phrases, different articulation styles
-- **Camera Angles**: Frontal view with slight variations
+### **Per-Speaker Performance**
+- **Speaker s23**: 13.78% WER (best)
+- **Speaker s1**: 18.64% WER
+- **Speaker s10**: 19.85% WER (challenging)
 
----
-
-### **Hardware Requirements**
-- **GPU**: NVIDIA RTX 3060 or equivalent (8GB+ VRAM recommended)
-- **RAM**: 16GB minimum for large dataset processing
-- **Storage**: 50GB+ (GRID: 10GB, MIRACL: 15GB, Processed: 25GB)
-
----
-
-## **Technical Specifications**
-
-### **Model Architecture**
-- **Type**: Production Transformer with 3D CNN backbone
-- **Parameters**: ~8M trainable parameters
-- **Input**: [Batch, 1, 75, 128, 64] normalized video tensors
-- **Output**: Character sequences via CTC decoding
-- **Vocabulary**: 28 classes (A-Z, space, CTC blank)
-
-### **Key Innovations**
-1. **Multi-Dataset Training**: Prevents overfitting, enables generalization
-2. **Windows-Safe Processing**: Handles large-scale dataset creation
-3. **Transformer Architecture**: Superior to LSTM for sequence modeling
-4. **Quality-Aware Pipeline**: MediaPipe + geometric fallback systems
-
-### **Performance Expectations**
-- **Training WER**: 15-30% (realistic for diverse speakers)
-- **Real-World Performance**: Excellent (no overfitting)
-- **Inference Speed**: <500ms per video sequence
-- **Memory Usage**: <4GB VRAM during inference
+### **Common Confusions**
+- **Words**: 'AT' ↔ 'IN', 'AT' ↔ 'AN'
+- **Characters**: 'T' ↔ 'N', 'A' ↔ 'I'
 
 ---
 
@@ -106,24 +86,93 @@ CTC Loss + Character-Level Decoding
 ```
 LipNet-FYP/
 ├── src/
-│   ├── windows_safe_processor.py          # Multi-dataset processor
-│   ├── transformer_lipnet.py              # Production training script
-│   └── mediapipe_preprocessor.py          # Legacy single dataset
+│   ├── stable_transformer.py       # Model architecture & training
+│   ├── test_model.py              # Testing & evaluation
+│   ├── visualizations.py          # Report visualizations
+│   ├── flask_backend.py           # Web API backend
+│   └── templates/
+│       └── index.html             # Web interface
 ├── data/
-│   ├── GRID/                              # GRID Corpus (3000 videos)
-│   ├── MIRACL-VC1/                        # MIRACL dataset (3000 sequences)
-│   └── processed_windows_safe/unified/train/ # 3500 processed samples
+│   └── processed_grid_only/       # GRID dataset
+│       ├── train/                 # 2400 samples
+│       └── test/                  # 600 samples
 ├── models/
-│   └── best_transformer_model.pth         # Trained model weights
-├── docs/
-│   └── Investigation_Report.docx          # Academic documentation
-└── README.md                              # This file
+│   └── best_stable_transformer.pth # Trained model
+├── test_results/
+│   ├── test_results.csv           # All predictions
+│   ├── test_summary.txt           # Performance summary
+│   └── confusion_analysis.txt     # Error analysis
+├── plots/                         # Generated visualizations
+└── README.md                      # This file
 ```
 
 ---
 
-### **Future Work**
-- **Web Interface**: Real-time webcam lip-reading
-- **Mobile Deployment**: Optimize for edge devices
-- **Language Extension**: Support multiple languages beyond English
-- **User Studies**: Evaluate with hearing-impaired community
+## **Web Interface**
+
+### **Features**
+- **Live Camera**: Real-time lip reading (webcam)
+- **Video Upload**: Process recorded videos
+- **Confidence Display**: Visual confidence meter
+- **REST API**: Integration endpoints
+
+### **Running the System**
+```bash
+# Install dependencies
+pip install torch torchvision flask flask-cors opencv-python mediapipe
+
+# Start the backend
+cd src
+python flask_backend.py
+
+# Access the interface
+# http://localhost:5000
+```
+
+---
+
+## **Technical Analysis**
+
+### **Strengths**
+- **Good GRID Performance**: 17.42% WER shows effective learning
+- **Stable Training**: No overfitting, consistent convergence
+- **High Confidence**: Model is confident in predictions
+- **Complete System**: End-to-end pipeline implemented
+
+### **Limitations**
+- **Dataset Specific**: Only works well on GRID vocabulary
+- **Limited Generalization**: Struggles with non-GRID content
+- **Speaker Dependent**: Performance varies by speaker
+- **Controlled Environment**: Requires good lighting/angles
+
+---
+
+## **Lessons Learned**
+
+1. **Dataset Matters**: GRID alone insufficient for real-world use
+2. **Architecture Success**: Transformer outperforms LSTM baselines
+3. **CTC Works Well**: Effective for sequence alignment
+4. **Need Diversity**: Multiple datasets crucial for generalization
+
+---
+
+## **Conclusion**
+
+This stable transformer model represents a significant milestone in the project, demonstrating:
+- Successful implementation of transformer-based lip reading
+- Good performance on controlled dataset (17.42% WER)
+- Complete end-to-end system with web interface
+- Clear understanding of limitations and next steps
+
+While not suitable for production use due to GRID-specific training, this model validates the technical approach and provides a solid foundation for future multi-dataset training.
+
+---
+
+## **Acknowledgments**
+
+- **GRID Corpus**: Cooke et al. (2006)
+- **PyTorch Community**: Deep learning framework
+
+---
+
+*This project milestone demonstrates the feasibility of transformer-based lip reading while highlighting the importance of diverse training data for real-world applications.*
