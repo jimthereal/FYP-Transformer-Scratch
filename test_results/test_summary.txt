@@ -1,0 +1,100 @@
+STABLE TRANSFORMER LIPNET - TEST RESULTS
+============================================================
+
+Model: best_stable_transformer.pth
+Test samples: 600
+
+PERFORMANCE METRICS:
+Overall WER: 0.1742 (17.42%)
+Overall CER: 0.1742 (17.42%)
+Word Accuracy: 0.7984 (79.84%)
+Sentence Accuracy: 0.3133 (31.33%)
+
+SPEAKER ANALYSIS:
+  s1: WER=0.1864
+  s10: WER=0.1985
+  s23: WER=0.1378
+
+BEST PREDICTIONS:
+  Target: 'PLACE WHITE WITH Q NINE SOON'
+  Pred:   'PLACE WHITE WITH Q NINE SOON'
+  WER: 0.000, Conf: 0.976
+
+  Target: 'PLACE BLUE BY P THREE SOON'
+  Pred:   'PLACE BLUE BY P THREE SOON'
+  WER: 0.000, Conf: 0.971
+
+  Target: 'PLACE RED BY J FOUR NOW'
+  Pred:   'PLACE RED BY J FOUR NOW'
+  WER: 0.000, Conf: 0.982
+
+  Target: 'SET RED BY O FIVE AGAIN'
+  Pred:   'SET RED BY O FIVE AGAIN'
+  WER: 0.000, Conf: 0.995
+
+  Target: 'SET BLUE BY A NINE SOON'
+  Pred:   'SET BLUE BY A NINE SOON'
+  WER: 0.000, Conf: 0.980
+
+  Target: 'BIN RED WITH N THREE AGAIN'
+  Pred:   'BIN RED WITH N THREE AGAIN'
+  WER: 0.000, Conf: 0.986
+
+  Target: 'SET WHITE WITH C SIX PLEASE'
+  Pred:   'SET WHITE WITH C SIX PLEASE'
+  WER: 0.000, Conf: 0.976
+
+  Target: 'SET RED BY U EIGHT PLEASE'
+  Pred:   'SET RED BY U EIGHT PLEASE'
+  WER: 0.000, Conf: 0.983
+
+  Target: 'LAY GREEN IN Z FOUR PLEASE'
+  Pred:   'LAY GREEN IN Z FOUR PLEASE'
+  WER: 0.000, Conf: 0.966
+
+  Target: 'BIN RED BY G FIVE AGAIN'
+  Pred:   'BIN RED BY G FIVE AGAIN'
+  WER: 0.000, Conf: 0.992
+
+
+WORST PREDICTIONS:
+  Target: 'BIN GREEN AT Z THREE AGAIN'
+  Pred:   'SET GREEN IT A EIGHT NOW'
+  WER: 0.833, Conf: 0.957
+
+  Target: 'BIN GREEN IN SP X SIX PLEASE'
+  Pred:   'BIN RED AITH K EIGHT PLEASE'
+  WER: 0.714, Conf: 0.933
+
+  Target: 'BIN GREEN AT N FIVE SOON'
+  Pred:   'PLAY GREIN AIT F FIVE SOON'
+  WER: 0.667, Conf: 0.928
+
+  Target: 'SET GREEN AT V SEVEN AGAIN'
+  Pred:   'SET GREEN IN I ZEREN PLEASE'
+  WER: 0.667, Conf: 0.942
+
+  Target: 'BIN BLUE BY P TWO PLEASE'
+  Pred:   'BIN GREEN WTH B ZERO PLEASE'
+  WER: 0.667, Conf: 0.972
+
+  Target: 'SET GREEN AT S ONE SOON'
+  Pred:   'PLACE REED IN H ONE SOON'
+  WER: 0.667, Conf: 0.960
+
+  Target: 'SET RED AT Z SEVEN AGAIN'
+  Pred:   'SET GREEN IN Z EIGH NOW'
+  WER: 0.667, Conf: 0.957
+
+  Target: 'BIN BLUE IN V EIGHT NOW'
+  Pred:   'BIN BLUE WITH G FIVE GAON'
+  WER: 0.667, Conf: 0.966
+
+  Target: 'LAY WHITE IN C THREE SOON'
+  Pred:   'SIT GREEN WITH Z THREE SOON'
+  WER: 0.667, Conf: 0.964
+
+  Target: 'SET SP GREEN AT SP L EIGHT PLEASE'
+  Pred:   'SET GREN IN Z EIGHT PLEASE'
+  WER: 0.625, Conf: 0.939
+

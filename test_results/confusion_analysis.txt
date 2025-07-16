@@ -1,0 +1,47 @@
+CONFUSION ANALYSIS
+============================================================
+
+TOP WORD CONFUSIONS:
+  'AT' -> 'IN': 38 times
+  'IN' -> 'AT': 31 times
+  'AT' -> 'AN': 25 times
+  'AT' -> 'IT': 15 times
+  'IN' -> 'WITH': 14 times
+  'IN' -> 'IT': 14 times
+  'IN' -> 'AN': 13 times
+  'AT' -> 'WITH': 11 times
+  'N' -> 'A': 10 times
+  'BLUE' -> 'SP': 9 times
+  'B' -> 'P': 8 times
+  'SP' -> 'PLEASE': 7 times
+  'P' -> 'B': 7 times
+  'S' -> 'A': 6 times
+  'O' -> 'U': 6 times
+  'E' -> 'Z': 6 times
+  'TWO' -> 'NOW': 5 times
+  'THREE' -> 'AGAIN': 5 times
+  'T' -> 'G': 5 times
+  'SP' -> 'WITH': 5 times
+
+
+TOP CHARACTER CONFUSIONS:
+  'T' -> 'N': 67 times
+  'A' -> 'I': 64 times
+  ' ' -> 'E': 62 times
+  'I' -> 'A': 52 times
+  'N' -> 'T': 48 times
+  ' ' -> 'T': 48 times
+  'N' -> 'O': 40 times
+  'E' -> ' ': 35 times
+  'I' -> ' ': 34 times
+  'O' -> ' ': 33 times
+  'S' -> 'E': 32 times
+  ' ' -> 'N': 32 times
+  ' ' -> 'O': 31 times
+  'T' -> ' ': 29 times
+  'E' -> 'A': 27 times
+  'S' -> ' ': 26 times
+  'O' -> 'S': 26 times
+  'N' -> 'A': 25 times
+  'N' -> ' ': 23 times
+  'P' -> ' ': 22 times
