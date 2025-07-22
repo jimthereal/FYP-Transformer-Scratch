@@ -93,16 +93,15 @@ LipNet-FYP/
 │   └── templates/
 │       └── index.html             # Web interface
 ├── data/
-│   └── processed_grid_only/       # GRID dataset
+│   └── processed_grid_only/       # GRID dataset (not uploaded)
 │       ├── train/                 # 2400 samples
 │       └── test/                  # 600 samples
 ├── models/
 │   └── best_stable_transformer.pth # Trained model
-├── test_results/
+├── results/                       # (not uploaded)
 │   ├── test_results.csv           # All predictions
 │   ├── test_summary.txt           # Performance summary
 │   └── confusion_analysis.txt     # Error analysis
-├── plots/                         # Generated visualizations
 └── README.md                      # This file
 ```
 

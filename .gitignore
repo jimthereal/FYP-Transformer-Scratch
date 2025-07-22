@@ -32,6 +32,7 @@ training_history*.pkl
 docs/
 Investigation_Report.docx
 *.pdf
+resutls/
 
 # OS files
 .DS_Store
